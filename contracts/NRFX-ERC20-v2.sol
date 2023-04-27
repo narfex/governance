@@ -4,7 +4,7 @@ pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-/// @title NarfexToken v2
+/// @title NarfexToken v3
 /// @author Danil Sakhinov
 contract NarfexToken is ERC20, Ownable {
 
@@ -30,8 +30,8 @@ contract NarfexToken is ERC20, Ownable {
         v2Token = v2Token_;
         masterChef = masterChef_;
 
-        runMigration();
         emit MasterChefSet(masterChef_);
+        emit MigrationRun();
     }
 
     /// @notice Migration from an old token to a new one
